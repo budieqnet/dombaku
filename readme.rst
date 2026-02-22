@@ -1,70 +1,80 @@
-###################
-What is CodeIgniter
-###################
+# Dombaku - Sistem Manajemen Ternak Domba & Kambing
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+**Dombaku** adalah aplikasi manajemen peternakan berbasis web yang dirancang khusus untuk mempermudah pencatatan dan pemantauan ternak domba dan kambing secara digital. Aplikasi ini membantu pemilik peternakan dan operator dalam mengelola data populasi, kesehatan, hingga aspek finansial peternakan dalam satu sistem terpusat.
 
-*******************
-Release Information
-*******************
+---
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+## 🚀 Fitur Utama
 
-**************************
-Changelog and New Features
-**************************
+Sistem ini memiliki berbagai modul yang mencakup siklus hidup ternak:
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+- **Manajemen Identitas Ternak**: Pencatatan detail ternak (jenis, tgl lahir, asal) dilengkapi dengan **QR Code** untuk identifikasi cepat.
+- **Pemantauan Pertumbuhan**: Pencatatan berat, tinggi, dan panjang badan secara berkala serta laporan **ADG (Average Daily Gain)** untuk melihat efektivitas pakan.
+- **Manajemen Kesehatan**: Riwayat penyakit, diagnosis dokter, tindakan medis, dan penjadwalan **Vaksinasi**.
+- **Siklus Reproduksi**: Manajemen riwayat perkawinan, pemantauan siklus birahi, hingga estimasi **Hari Perkiraan Lahir (HPL)**.
+- **Manajemen Pakan**: Pengaturan stok pakan dan jadwal pemberian pakan harian per kandang.
+- **Laporan Keuangan**: Pencatatan transaksi penjualan, pembelian, biaya operasional, dan konfigurasi harga pasar.
+- **User Management**: Mendukung multi-user dengan hak akses berbeda (**Administrator** dan **Operator**).
 
-*******************
-Server Requirements
-*******************
+---
 
-PHP version 5.6 or newer is recommended.
+## 🛠️ Teknologi yang Digunakan
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+Aplikasi ini dibangun menggunakan stack teknologi berikut:
 
-************
-Installation
-************
+- **Framework**: CodeIgniter 3 (PHP)
+- **Database**: MySQL
+- **Template**: AdminLTE (Dashboard)
+- **Library**:
+  - `mpdf/mpdf`: Untuk pembuatan laporan PDF.
+  - `picqer/php-barcode-generator`: Untuk pembuatan barcode/QR code ternak.
+  - `Bootstrap`: Framework CSS untuk antarmuka responsif.
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+---
 
-*******
-License
-*******
+## 📥 Instalasi
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+Ikuti langkah-langkah berikut untuk menjalankan proyek di lingkungan lokal atau server:
 
-*********
-Resources
-*********
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/username/dombaku.git
+   cd dombaku
+   ```
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
+2. **Setup Database**
+   - Buat database baru di MySQL (misal: `kambing`).
+   - Import file SQL yang tersedia di `/db/kambing.sql`.
 
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
+3. **Konfigurasi Database**
+   - Buka file `application/config/database.php`.
+   - Sesuaikan `hostname`, `username`, `password`, dan `database` dengan environment Anda.
 
-***************
-Acknowledgement
-***************
+4. **Instalasi Dependency (Opsional)**
+   Sistem ini sudah menyertakan folder `vendor`. Jika ingin memperbarui library, jalankan:
+   ```bash
+   composer install
+   ```
 
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+5. **Jalankan Aplikasi**
+   - Pindahkan folder proyek ke direktori server web Anda (misal: `htdocs` atau `/var/www/html/`).
+   - Akses melalui browser: `http://localhost/dombaku`.
+
+---
+
+## 🔑 Akses Login Default
+
+- **URL Login**: `http://localhost/dombaku/autentikasi`
+- **Administrator**:
+  - Username: `admin`
+  - Password: `admin`
+
+---
+
+## 📄 Lisensi
+
+Proyek ini dilisensikan di bawah **MIT License**. Silakan lihat file `license.txt` untuk informasi lebih lanjut.
+
+---
+
+**Dombaku** - *Digitalisasi Peternakan untuk Masa Depan yang Lebih Maju.*
